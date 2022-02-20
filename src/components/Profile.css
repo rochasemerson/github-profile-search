@@ -1,0 +1,112 @@
+.form-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+
+    background-color: #25292f;
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #25292f;
+    color: whitesmoke;
+    padding: 1rem;
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+.form-input {
+    height: 2.5rem;
+    width: 12.5rem;
+    text-indent: 10px;
+}
+
+.form-button,
+.reset {
+    height: 2.5rem;
+    width: 7.5rem;
+    opacity: 0.5;
+}
+
+.profile-img {
+    height: 150px;
+    width: 150px;
+}
+
+.profile-link {
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    color: chocolate;
+    text-decoration: none;
+}
+
+.profile-link::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    scale: 0;
+    font-size: 0.75rem;
+}
+
+.profile-link:hover::before {
+    transform: translate(25%, -125%);
+    scale: 1;
+}
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #25292f;
+    color: red;
+    padding: 1rem;
+    margin: 0;
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+@media (width < 800px) {
+    .profile-link {
+        font-size: 1.5rem;
+    }
+}
+
+@media (width < 500px) {
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        overflow: scroll;
+    }
+
+    .profile-img {
+        height: 100px;
+        width: 100px;
+        padding-top: 4rem;
+    }
+
+    .profile-link {
+        padding-bottom: 0;
+    }
+
+    .profile-link:hover::before {
+        transform: translate(0, -125%);
+        scale: 1;
+    }
+}
+
+@media (height < 800px) {
+    .profile-container {
+        min-height: 75vh;
+        max-height: 75vh;
+    }
+}
